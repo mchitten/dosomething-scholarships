@@ -21,6 +21,9 @@ class ShareAStatsController < ApplicationController
   def edit
   end
 
+  def share
+  end
+
   # POST /share_a_stats
   # POST /share_a_stats.json
   def create

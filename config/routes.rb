@@ -1,5 +1,9 @@
 Scholarships::Application.routes.draw do
-  resources :share_a_stats
+  resources :share_a_stats, path: '/social-scholarship' do
+    collection do
+      post 'share'
+    end
+  end
 
   root to: 'share_a_stats#index'
   # The priority is based upon order of creation: first created -> highest priority.

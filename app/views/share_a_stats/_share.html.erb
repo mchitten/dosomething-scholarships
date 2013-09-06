@@ -1,0 +1,12 @@
+<%= simple_form_for(@share_a_stat, url: { action: 'share' }, html: { multipart: true, class: 'form form-submit right' }) do |f| %>
+  <%= f.input :your_name, wrapper_html: { class: 'my-name' } %>
+  <%= f.input :your_number, wrapper_html: { class: 'my-number' } %>
+  <%= f.simple_fields_for :friends_numbers do |friend| %>
+    <%= friend.input :first, wrapper_html: { class: 'friend-number' } %>
+    <%= friend.input :second, wrapper_html: { class: 'friend-number' } %>
+    <%= friend.input :third, wrapper_html: { class: 'friend-number' } %>
+    <%= friend.input :fourth, wrapper_html: { class: 'friend-number' } %>
+    <%= friend.input :fifth, wrapper_html: { class: 'friend-number' } %>
+    <%= friend.input :sixth, wrapper_html: { class: 'friend-number' } %>
+  <% end %>
+<% end %>

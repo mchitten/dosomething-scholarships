@@ -6,7 +6,7 @@ FactoryGirl.define do
     message "This is the Share a Stat's description"
     image "MyString"
     scholarship false
-    tip "MyString"
+    tip "Test Tip"
     mc_alpha 1
     mc_beta 1
     redirect "MyString"
