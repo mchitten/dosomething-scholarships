@@ -1,0 +1,2 @@
+module ShareAStatsHelper
+end

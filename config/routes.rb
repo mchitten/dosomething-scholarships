@@ -1,4 +1,7 @@
 Scholarships::Application.routes.draw do
+  resources :share_a_stats
+
+  root to: 'share_a_stats#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

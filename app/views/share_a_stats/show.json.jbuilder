@@ -1,0 +1,1 @@
+json.extract! @share_a_stat, :title, :message, :image, :scholarship, :tip, :mc_alpha, :mc_beta, :redirect, :redirect_message, :campaign_id, :color_scheme, :logo, :logo_text, :shortform_image, :shortform_bucket, :sponsor_image, :published, :created_at, :updated_at
