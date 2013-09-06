@@ -1,3 +1,9 @@
+PATH
+  remote: DsAuth
+  specs:
+    ds_auth (0.0.1)
+      rails (~> 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -277,6 +283,7 @@ DEPENDENCIES
   cucumber-rails
   dalli
   database_cleaner
+  ds_auth!
   factory_girl_rails (~> 4.0)
   faker
   gibbon

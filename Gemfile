@@ -75,3 +75,5 @@ group :development, :test do
   gem 'better_errors'
   gem 'letter_opener'
 end
+
+gem 'ds_auth', path: 'DsAuth'
