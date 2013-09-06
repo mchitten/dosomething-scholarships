@@ -1,0 +1,22 @@
+connection: &connection
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  database: dosomething_scholarships
+
+development:
+  <<: *connection
+
+test: &test
+  <<: *connection
+  database: dosomething_scholarships_test
+
+staging: &staging
+  <<: *connection
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: dosomething_scholarships
