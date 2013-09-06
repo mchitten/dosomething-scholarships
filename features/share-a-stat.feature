@@ -10,6 +10,7 @@ Feature: Share a Stat
     Given I am on "/"
     Then I should see "Campaigns"
     And there should be 1 ".scholarship" element
+    And there should be 2 "img" elements
     And I should see "Test SaS"
     And I should see "This is the Share a Stat's description"
     And I should see "GO"

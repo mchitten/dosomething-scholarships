@@ -46,6 +46,13 @@ end
 
 gem 'paperclip'
 gem 'simple_form'
+gem 'httparty'
+gem 'gibbon'
+gem 'omniauth-facebook'
+gem 'newrelic_rpm'
+gem 'chronic'
+gem 'dalli'
+gem 'mailchimp'
 
 group :development, :test do
   gem 'rspec-rails'

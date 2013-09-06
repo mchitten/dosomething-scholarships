@@ -6,7 +6,7 @@
   </ul>
 </nav>
 
-<p id="notice"><%= notice %></p>
+<% if notice %><p id="notice"><%= notice %></p><% end %>
 
 <h1><%= @share_a_stat.title %></h1>
 <%= simple_format @share_a_stat.message %>

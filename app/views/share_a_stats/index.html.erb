@@ -1,8 +1,9 @@
 <div class="scholarships-wrapper">
   <% @share_a_stats.each do |share_a_stat| %>
     <div class="scholarship">
-      <h2><%= share_a_stat.title %></h2>
-      <%= simple_format share_a_stat.message %>
+      <%= link_to share_a_stat do %><%= image_tag share_a_stat.image.url(:list) %><% end %>
+      <%= link_to share_a_stat.title, share_a_stat %>
+      <p><%= truncate share_a_stat.message, length: 100 %></p>
       <%= link_to 'GO', share_a_stat %>
     </div>
   <% end %>
