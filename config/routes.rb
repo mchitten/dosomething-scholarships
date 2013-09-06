@@ -4,6 +4,7 @@ Scholarships::Application.routes.draw do
       post 'share'
     end
   end
+  resources :share_a_stat_posts, only: [:create]
 
   root to: 'share_a_stats#index'
   # The priority is based upon order of creation: first created -> highest priority.

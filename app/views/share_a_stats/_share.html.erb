@@ -1,12 +1,26 @@
-<%= simple_form_for(@share_a_stat, url: { action: 'share' }, html: { multipart: true, class: 'form form-submit right' }) do |f| %>
-  <%= f.input :your_name, wrapper_html: { class: 'my-name' } %>
-  <%= f.input :your_number, wrapper_html: { class: 'my-number' } %>
-  <%= f.simple_fields_for :friends_numbers do |friend| %>
-    <%= friend.input :first, wrapper_html: { class: 'friend-number' } %>
-    <%= friend.input :second, wrapper_html: { class: 'friend-number' } %>
-    <%= friend.input :third, wrapper_html: { class: 'friend-number' } %>
-    <%= friend.input :fourth, wrapper_html: { class: 'friend-number' } %>
-    <%= friend.input :fifth, wrapper_html: { class: 'friend-number' } %>
-    <%= friend.input :sixth, wrapper_html: { class: 'friend-number' } %>
+<div id="share-a-stat-container">
+  <h3>Share this stat with six friends for a chance to win a</h3>
+  <h3>$2000 scholarship</h3>
+
+  <h3 class="tip"><%= @share_a_stat.tip %></h3>
+
+  <%= simple_form_for(@post, html: { multipart: true, class: 'form form-submit right' }) do |f| %>
+    <%= f.hidden_field :share_a_stat_id, value: @share_a_stat.id %>
+    <div id="your-info">
+      <%= f.input :my_name, label: false, input_html: { placeholder: 'Your Name' }, wrapper_html: { class: 'my-name' } %>
+      <%= f.input :my_number, label: false, input_html: { placeholder: "Your Cell #" }, wrapper_html: { class: 'my-number' } %>
+      <div style="clear: both"></div>
+    </div>
+    <div id="friends-info">
+      <%= f.input :friend_1, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
+      <%= f.input :friend_2, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
+      <%= f.input :friend_3, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
+      <%= f.input :friend_4, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
+      <%= f.input :friend_5, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
+      <%= f.input :friend_6, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
+      <div style="clear: both"></div>
+    </div>
+
+    <%= f.submit 'Submit', class: 'btn primary medium' %>
   <% end %>
-<% end %>
+</div>

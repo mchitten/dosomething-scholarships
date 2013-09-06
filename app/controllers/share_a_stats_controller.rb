@@ -10,6 +10,7 @@ class ShareAStatsController < ApplicationController
   # GET /share_a_stats/1
   # GET /share_a_stats/1.json
   def show
+    @post = ShareAStatPost.new
   end
 
   # GET /share_a_stats/new
@@ -19,9 +20,6 @@ class ShareAStatsController < ApplicationController
 
   # GET /share_a_stats/1/edit
   def edit
-  end
-
-  def share
   end
 
   # POST /share_a_stats

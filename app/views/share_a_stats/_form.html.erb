@@ -1,4 +1,4 @@
-<%= form_for(@share_a_stat) do |f| %>
+<%= simple_form_for(@share_a_stat) do |f| %>
   <% if @share_a_stat.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@share_a_stat.errors.count, "error") %> prohibited this share_a_stat from being saved:</h2>
@@ -11,74 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :scholarship %><br>
-    <%= f.check_box :scholarship %>
-  </div>
-  <div class="field">
-    <%= f.label :tip %><br>
-    <%= f.text_field :tip %>
-  </div>
-  <div class="field">
-    <%= f.label :mc_alpha %><br>
-    <%= f.number_field :mc_alpha %>
-  </div>
-  <div class="field">
-    <%= f.label :mc_beta %><br>
-    <%= f.number_field :mc_beta %>
-  </div>
-  <div class="field">
-    <%= f.label :redirect %><br>
-    <%= f.text_field :redirect %>
-  </div>
-  <div class="field">
-    <%= f.label :redirect_message %><br>
-    <%= f.text_area :redirect_message %>
-  </div>
-  <div class="field">
-    <%= f.label :campaign_id %><br>
-    <%= f.number_field :campaign_id %>
-  </div>
-  <div class="field">
-    <%= f.label :color_scheme %><br>
-    <%= f.text_field :color_scheme %>
-  </div>
-  <div class="field">
-    <%= f.label :logo %><br>
-    <%= f.text_field :logo %>
-  </div>
-  <div class="field">
-    <%= f.label :logo_text %><br>
-    <%= f.text_field :logo_text %>
-  </div>
-  <div class="field">
-    <%= f.label :shortform_image %><br>
-    <%= f.text_field :shortform_image %>
-  </div>
-  <div class="field">
-    <%= f.label :shortform_bucket %><br>
-    <%= f.text_field :shortform_bucket %>
-  </div>
-  <div class="field">
-    <%= f.label :sponsor_image %><br>
-    <%= f.text_field :sponsor_image %>
-  </div>
-  <div class="field">
-    <%= f.label :published %><br>
-    <%= f.check_box :published %>
-  </div>
+  <%= f.input :title %>
+  <%= f.input :message, input_html: { rows: 8, cols: 50 } %>
+  <%= f.input :image, as: :file %>
+  <%= f.input :scholarship, as: :boolean, label: 'Has a scholarship?' %>
+  <%= f.input :tip %>
+  <%= f.input :mc_alpha, label: 'Mobile Commons Alpha Bucket' %>
+  <%= f.input :mc_beta, label: 'Mobile Commons Beta Bucket' %>
+  <%= f.input :redirect %>
+  <%= f.input :redirect_message %>
+  <%= f.input :campaign_id %>
+  <%= f.input :color_scheme, as: :select, collection: [['Green', 'green'], ['Red', 'red'], ['Orange', 'orange']], include_blank: 'No color' %>
+  <%= f.input :logo, as: :file %>
+  <%= f.input :logo_text %>
+  <%= f.input :shortform_image, as: :file %>
+  <%= f.input :shortform_bucket %>
+  <%= f.file_field :sponsor_image %>
+  <%= f.input :published, as: :boolean, label: 'Published?' %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
