@@ -3,6 +3,12 @@ Feature: Share a Stat
   I can view share a stats
   and send stats to my friends
 
+  Background:
+    Given there is a share_a_stat
+
   Scenario: Visit the Share a Stat homepage
-    Given I am on "/social-scholarships"
+    Given I am on "/"
     Then I should see "Campaigns"
+    And I should see "Test SaS"
+    And I should see "This is the Share a Stat's description"
+    And I should see "GO"

@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :share_a_stat do
-    title "MyString"
-    message "MyText"
+    title "Test SaS"
+    message "This is the Share a Stat's description"
     image "MyString"
     scholarship false
     tip "MyString"

@@ -552,7 +552,7 @@ input {
     }
     padding: 0.3em 0.3em 0.1em 36px;
     border-radius: 2em;
-    background: white url("images/search.png") no-repeat 16px 8px;
+    background: white url("/images/search.png") no-repeat 16px 8px;
   }
 }
 
@@ -670,7 +670,7 @@ select {
   font-size: 1rem;
   padding: 0.5em 3em 0.5em 1em;
   margin: 0.25em;
-  background-image: url("../images/dropdown.png");
+  background-image: url("/images/dropdown.png");
   background-position: 90% 50%;
   background-repeat: no-repeat;
   -webkit-appearance: none;
@@ -684,14 +684,14 @@ select {
     outline: 0;
     border: 1px solid #fed100;
     box-shadow: 0 0 3px #fed100;
-    background-image: url("../images/dropdown_gold.png");
+    background-image: url("/images/dropdown_gold.png");
   }
 }
 
 @font-face {
   font-family: "din-regular";
-  src: url("fonts/DINWeb.eot");
-  src: url("fonts/DINWeb.eot?iefix") format("eot"), url("fonts/DINWeb.woff") format("woff");
+  src: url("/fonts/DINWeb.eot");
+  src: url("/fonts/DINWeb.eot?iefix") format("eot"), url("/fonts/DINWeb.woff") format("woff");
   font-style: normal;
   font-weight: 400;
 }
@@ -699,8 +699,8 @@ select {
 
 @font-face {
   font-family: "din-regular";
-  src: url("fonts/DINWeb-Medium.eot");
-  src: url("fonts/DINWeb-Medium.eot?iefix") format("eot"), url("fonts/DINWeb-Medium.woff") format("woff");
+  src: url("/fonts/DINWeb-Medium.eot");
+  src: url("/fonts/DINWeb-Medium.eot?iefix") format("eot"), url("/fonts/DINWeb-Medium.woff") format("woff");
   font-style: normal;
   font-weight: 500;
 }
@@ -708,8 +708,8 @@ select {
 
 @font-face {
   font-family: "din-regular";
-  src: url("fonts/DINWeb-Bold.eot");
-  src: url("fonts/DINWeb-Bold.eot?iefix") format("eot"), url("fonts/DINWeb-Bold.woff") format("woff");
+  src: url("/fonts/DINWeb-Bold.eot");
+  src: url("/fonts/DINWeb-Bold.eot?iefix") format("eot"), url("/fonts/DINWeb-Bold.woff") format("woff");
   font-style: normal;
   font-weight: 600;
 }
@@ -717,8 +717,8 @@ select {
 
 @font-face {
   font-family: "din-condensed";
-  src: url("fonts/DINWeb-CondMedium.eot");
-  src: url("fonts/DINWeb-CondMedium.eot?iefix") format("eot"), url("fonts/DINWeb-CondMedium.woff") format("woff");
+  src: url("/fonts/DINWeb-CondMedium.eot");
+  src: url("/fonts/DINWeb-CondMedium.eot?iefix") format("eot"), url("/fonts/DINWeb-CondMedium.woff") format("woff");
   font-style: normal;
   font-weight: 500;
 }
@@ -770,7 +770,7 @@ nav.utility {
     width: 10px;
     font-size: 0.9rem;
     border: 0;
-    background: #333131 url("images/search.png") no-repeat 12px 6px;
+    background: #333131 url("/images/search.png") no-repeat 12px 6px;
     background-size: 18px 45px;
     cursor: pointer;
     -webkit-transition: width 0.25s,background-color 0.25s;
@@ -793,7 +793,7 @@ nav.utility {
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .search form input[type="search"] {
-    background-image: url("images/search_2x.png");
+    background-image: url("/images/search_2x.png");
   }
 }
 
@@ -1090,7 +1090,7 @@ nav {
 
 .ds-intro {
   color: #fff;
-  background: url("images/bg-intro.jpg") no-repeat center center;
+  background: url("/images/bg-intro.jpg") no-repeat center center;
   background-size: cover;
   .flexwidth-wrapper {
     width: 580px;
@@ -1183,7 +1183,7 @@ nav {
     padding-bottom: 1em;
   }
   .sprite {
-    background-image: url(images/sponsors.png);
+    background-image: url(/images/sponsors.png);
     background-repeat: no-repeat;
     display: inline-block;
     width: 100px;

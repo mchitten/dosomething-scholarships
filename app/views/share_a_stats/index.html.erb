@@ -1,59 +1,9 @@
-<h1>Listing share_a_stats</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Message</th>
-      <th>Image</th>
-      <th>Scholarship</th>
-      <th>Tip</th>
-      <th>Mc alpha</th>
-      <th>Mc beta</th>
-      <th>Redirect</th>
-      <th>Redirect message</th>
-      <th>Campaign</th>
-      <th>Color scheme</th>
-      <th>Logo</th>
-      <th>Logo text</th>
-      <th>Shortform image</th>
-      <th>Shortform bucket</th>
-      <th>Sponsor image</th>
-      <th>Published</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @share_a_stats.each do |share_a_stat| %>
-      <tr>
-        <td><%= share_a_stat.title %></td>
-        <td><%= share_a_stat.message %></td>
-        <td><%= share_a_stat.image %></td>
-        <td><%= share_a_stat.scholarship %></td>
-        <td><%= share_a_stat.tip %></td>
-        <td><%= share_a_stat.mc_alpha %></td>
-        <td><%= share_a_stat.mc_beta %></td>
-        <td><%= share_a_stat.redirect %></td>
-        <td><%= share_a_stat.redirect_message %></td>
-        <td><%= share_a_stat.campaign_id %></td>
-        <td><%= share_a_stat.color_scheme %></td>
-        <td><%= share_a_stat.logo %></td>
-        <td><%= share_a_stat.logo_text %></td>
-        <td><%= share_a_stat.shortform_image %></td>
-        <td><%= share_a_stat.shortform_bucket %></td>
-        <td><%= share_a_stat.sponsor_image %></td>
-        <td><%= share_a_stat.published %></td>
-        <td><%= link_to 'Show', share_a_stat %></td>
-        <td><%= link_to 'Edit', edit_share_a_stat_path(share_a_stat) %></td>
-        <td><%= link_to 'Destroy', share_a_stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Share a stat', new_share_a_stat_path %>
+<div class="scholarships-wrapper">
+  <% @share_a_stats.each do |share_a_stat| %>
+    <div>
+      <h2><%= share_a_stat.title %></h2>
+      <%= simple_format share_a_stat.message %>
+      <%= link_to 'GO', share_a_stat %>
+    </div>
+  <% end %>
+</div>
