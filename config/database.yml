@@ -20,3 +20,6 @@ production:
   encoding: unicode
   pool: 5
   database: dosomething_scholarships
+
+cucumber:
+  <<: *test

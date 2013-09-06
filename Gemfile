@@ -56,7 +56,7 @@ group :development, :test do
   gem 'spork'
   gem 'faker'
 
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'rack-livereload'
