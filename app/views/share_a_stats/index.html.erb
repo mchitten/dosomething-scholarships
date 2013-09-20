@@ -1,3 +1,4 @@
+<% cache ['sas-index', @share_a_stats.last.updated_at.to_i] do %>
 <div class="scholarships-wrapper">
   <% @share_a_stats.each do |share_a_stat| %>
     <div class="scholarship">
@@ -10,3 +11,4 @@
 </div>
 
 <%= link_to 'New Share a stat', new_share_a_stat_path %>
+<% end %>

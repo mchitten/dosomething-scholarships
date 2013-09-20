@@ -77,3 +77,4 @@ group :development, :test do
 end
 
 gem 'ds_auth', path: 'DsAuth'
+gem 'actionpack-page_caching'
