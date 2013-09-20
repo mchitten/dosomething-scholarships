@@ -10,4 +10,12 @@ class ShareAStat < ActiveRecord::Base
   def to_param
     [self.id, self.title].join('-').parameterize
   end
+
+  after_create do
+    expire_page controller: :share_a_stats, action: :index
+  end
+
+  after_save do
+    expire_page share_a_stat_path(self.id)
+  end
 end

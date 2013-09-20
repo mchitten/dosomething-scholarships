@@ -5,12 +5,14 @@ class ShareAStatsController < ApplicationController
   # GET /share_a_stats.json
   def index
     @share_a_stats = ShareAStat.all
+    expires_in 1.month, public: true, 'max-style' => 0
   end
 
   # GET /share_a_stats/1
   # GET /share_a_stats/1.json
   def show
     @post = ShareAStatPost.new
+    expires_in 1.year, public: true, 'max-style' => 0
   end
 
   # GET /share_a_stats/new
@@ -65,7 +67,9 @@ class ShareAStatsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_share_a_stat
-      @share_a_stat = ShareAStat.find(params[:id])
+      @share_a_stat = Rails.cache.fetch 'share-a-stat-' + params[:id].to_s do
+        ShareAStat.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
