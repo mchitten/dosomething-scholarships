@@ -3,7 +3,7 @@ class ShareAStatPostsController < ApplicationController
     @share_a_stat = ShareAStatPost.new(share_a_stat_post_params)
     respond_to do |format|
       if @share_a_stat.save
-        format.html { redirect_to (@share_a_stat.share_a_stat.redirect ? @share_a_stat.share_a_stat.redirect : @share_a_stat.share_a_stat), notice: @share_a_stat.share_a_stat.redirect_message || 'Thanks! You\'re entered to win the $2000 scholarship.' }
+        format.html { redirect_to ((@share_a_stat.share_a_stat.redirect && !@share_a_stat.share_a_stat.redirect.empty?) ? @share_a_stat.share_a_stat.redirect : @share_a_stat.share_a_stat), notice: @share_a_stat.share_a_stat.redirect_message || 'Thanks! You\'re entered to win the $2000 scholarship.' }
         format.json { render action: 'show', status: :created, location: @share_a_stat }
       else
         format.html { render action: 'new' }

@@ -1,19 +1,16 @@
-<% if notice %><p id="notice"><%= notice %></p><% end %>
-
-<% cache [@share_a_stat.id, @share_a_stat.updated_at.to_i] do %>
 <nav class="breadcrumbs">
   <ul>
     <li><a href="http://www.dosomething.org">Home</a></li>
-    <li><a href="http://scholarships.dosomething.org">Scholarships</a></li>
+    <li><%= link_to 'Scholarships', root_path %></li>
     <li><%= link_to @share_a_stat.title, @share_a_stat %></li>
   </ul>
 </nav>
+<% if notice %><p id="notice"><%= notice %></p><% end %>
 
-<h1><%= @share_a_stat.title %></h1>
-<%= simple_format @share_a_stat.message %>
-
-<%= render 'share' %>
-
-<%= link_to 'Edit', edit_share_a_stat_path(@share_a_stat) %> |
-<%= link_to 'Back', share_a_stats_path %>
+<% cache [@share_a_stat.id, @share_a_stat.updated_at.to_i] do %>
+  <h1><%= @share_a_stat.title %></h1>
+  <%= simple_format @share_a_stat.message %>
+  <%= render 'share' %>
+  <%= link_to 'Edit', edit_share_a_stat_path(@share_a_stat) %> |
+  <%= link_to 'Back', share_a_stats_path %>
 <% end %>
