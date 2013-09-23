@@ -522,7 +522,7 @@ label {
   float: left;
   clear: both;
   width: 100%;
-  margin: 1em 1em 0.5em;
+  margin: 0.5em 1em 0.5em;
 }
 
 .share_a_stat {
@@ -531,7 +531,7 @@ label {
     min-height: 50px;
   }
 
-  input[type="text"] {
+  input[type="text"], input[type="number"] {
     float: left;
     width: 70%;
   }
@@ -559,7 +559,7 @@ label {
 }
 
 input {
-  &[type="text"], &[type="search"] {
+  &[type="text"], &[type="search"], &[type="number"] {
     width: 100%;
     font-family: din-regular,"Trebuchet MS",sans-serif;
     font-size: 1rem;

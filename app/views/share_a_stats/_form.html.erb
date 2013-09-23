@@ -12,21 +12,14 @@
   <% end %>
 
   <%= f.input :title %>
-  <%= f.input :message, input_html: { rows: 8, cols: 50 } %>
-  <%= f.input :image, as: :file %>
-  <%= f.input :scholarship, as: :boolean, label: 'Has a scholarship?' %>
-  <%= f.input :tip %>
-  <%= f.input :mc_alpha, label: 'Mobile Commons Alpha Bucket' %>
-  <%= f.input :mc_beta, label: 'Mobile Commons Beta Bucket' %>
+  <%= f.input :message, input_html: { rows: 20, cols: 50 } %>
+  <%= f.input :tip, as: :text, input_html: { rows: 8, cols: 50 } %>
+  <%= f.input :mc_alpha, as: :string, label: 'MC Alpha Bucket' %>
+  <%= f.input :mc_beta, as: :string, label: 'MC Beta Bucket' %>
   <%= f.input :redirect %>
   <%= f.input :redirect_message %>
-  <%= f.input :campaign_id %>
   <%= f.input :color_scheme, as: :select, collection: [['Green', 'green'], ['Red', 'red'], ['Orange', 'orange']], include_blank: 'No color' %>
-  <%= f.input :logo, as: :file %>
-  <%= f.input :logo_text %>
-  <%= f.input :shortform_image, as: :file %>
-  <%= f.input :shortform_bucket %>
-  <%= f.file_field :sponsor_image %>
+  <%= f.input :image, as: :file %>
   <%= f.input :published, as: :boolean, label: 'Published?' %>
 
   <div class="actions">
