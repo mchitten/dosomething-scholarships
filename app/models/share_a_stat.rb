@@ -8,8 +8,10 @@ class ShareAStat < ActiveRecord::Base
   end
 
   before_save do
-    File.open(Rails.root.to_s + '/public/system/share_a_stats/rules/' + self.rules.original_filename, 'wb') { |f| f.write(self.rules.read); f.close }
-    self.rules = '/system/share_a_stats/rules/' + self.rules.original_filename
+    unless self.rules.is_a? String
+      File.open(Rails.root.to_s + '/public/system/share_a_stats/rules/' + self.rules.original_filename, 'wb') { |f| f.write(self.rules.read); f.close }
+      self.rules = '/system/share_a_stats/rules/' + self.rules.original_filename
+    end
   end
 
   # after_create do

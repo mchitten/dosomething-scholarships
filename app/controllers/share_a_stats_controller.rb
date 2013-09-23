@@ -4,7 +4,7 @@ class ShareAStatsController < ApplicationController
   # GET /share_a_stats
   # GET /share_a_stats.json
   def index
-    @share_a_stats = ShareAStat.all
+    @share_a_stats = ShareAStat.where(published: true)
   end
 
   # GET /share_a_stats/1
