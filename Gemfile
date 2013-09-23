@@ -76,5 +76,4 @@ group :development, :test do
   gem 'letter_opener'
 end
 
-gem 'ds_auth', path: 'DsAuth'
 gem 'actionpack-page_caching'
