@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906184025) do
+ActiveRecord::Schema.define(version: 20130923204651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,19 +34,12 @@ ActiveRecord::Schema.define(version: 20130906184025) do
     t.string   "title"
     t.text     "message"
     t.string   "image"
-    t.boolean  "scholarship"
     t.string   "tip"
     t.integer  "mc_alpha"
     t.integer  "mc_beta"
     t.string   "redirect"
     t.text     "redirect_message"
-    t.integer  "campaign_id"
     t.string   "color_scheme"
-    t.string   "logo"
-    t.string   "logo_text"
-    t.string   "shortform_image"
-    t.string   "shortform_bucket"
-    t.string   "sponsor_image"
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,18 +47,7 @@ ActiveRecord::Schema.define(version: 20130906184025) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "logo_file_name"
-    t.string   "logo_content_type"
-    t.integer  "logo_file_size"
-    t.datetime "logo_updated_at"
-    t.string   "shortform_image_file_name"
-    t.string   "shortform_image_content_type"
-    t.integer  "shortform_image_file_size"
-    t.datetime "shortform_image_updated_at"
-    t.string   "sponsor_image_file_name"
-    t.string   "sponsor_image_content_type"
-    t.integer  "sponsor_image_file_size"
-    t.datetime "sponsor_image_updated_at"
+    t.string   "rules"
   end
 
 end

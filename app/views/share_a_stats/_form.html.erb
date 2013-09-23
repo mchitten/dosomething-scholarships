@@ -20,6 +20,7 @@
   <%= f.input :redirect_message, input_html: { placeholder: 'This will appear at the top of the page that the user lands on.' } %>
   <%= f.input :color_scheme, as: :select, collection: [['Green', 'green'], ['Red', 'red'], ['Orange', 'orange']], include_blank: 'No color' %>
   <%= f.input :image, as: :file %>
+  <%= f.input :rules, as: :file %>
   <%= f.input :published, as: :boolean, label: 'Published?' %>
 
   <div class="actions">

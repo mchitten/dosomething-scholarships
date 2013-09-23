@@ -71,6 +71,6 @@ class ShareAStatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def share_a_stat_params
-      params.require(:share_a_stat).permit(:title, :message, :image, :scholarship, :tip, :mc_alpha, :mc_beta, :redirect, :redirect_message, :campaign_id, :color_scheme, :logo, :logo_text, :shortform_image, :shortform_bucket, :sponsor_image, :published)
+      params.require(:share_a_stat).permit(:title, :message, :image, :tip, :mc_alpha, :mc_beta, :redirect, :redirect_message, :color_scheme, :published, :rules)
     end
 end
