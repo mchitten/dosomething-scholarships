@@ -11,13 +11,9 @@
       <%= f.input :my_number, label: false, input_html: { placeholder: "Your Cell #" }, wrapper_html: { class: 'my-number' } %>
     </div>
     <div id="friends-info">
-      <%= f.input :friend_1, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
-      <%= f.input :friend_2, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
-      <%= f.input :friend_3, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
-      <%= f.input :friend_4, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
-      <%= f.input :friend_5, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
-      <%= f.input :friend_6, label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
-      <div style="clear: both"></div>
+      <% (1..6).each do |n| %>
+        <%= f.input :"friend_#{n}", label: false, input_html: { placeholder: "Friend's Cell #" }, wrapper_html: { class: 'friend-number' } %>
+      <% end %>
     </div>
 
     <%= f.submit 'Submit', class: 'btn primary medium' %>
