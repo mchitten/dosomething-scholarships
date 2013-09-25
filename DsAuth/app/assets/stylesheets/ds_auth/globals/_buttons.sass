@@ -1,0 +1,103 @@
+@import "compass/css3"
+@import "variables"
+
+// BUTTON STYLES
+// -------------
+
+// DISPLAY STYLES
+.btn
+  margin: 0 auto
+  padding: 0.2em 0 0.25em 0
+  clear: both
+  position: static
+  height: 2em
+  display: block
+  cursor: pointer
+  font-family: din
+  font-weight: 700
+  text-align: center
+  text-decoration: none !important
+  text-transform: uppercase
+  -webkit-appearance: none
+  +border-radius(3px)
+
+// COLOR STYLES & HOVER STATES
+.btn.primary /* @TODO - MAKE THIS A FUNCTION */
+  color: $btn-primary-color !important
+  border: 1px solid $btn-primary-border
+  background: $btn-primary
+  +background-image(linear-gradient($btn-primary, $btn-primary-hover))
+  &:hover /* While mouse hovers */
+    background: $btn-primary-hover
+  &:active
+    +background-image(linear-gradient($btn-primary-hover, $btn-primary))
+  &:link, &:active, &:hover
+    color: $off-black
+    text-decoration: none !important
+
+.btn.secondary
+  background: $btn-secondary
+  color: $btn-secondary-color !important
+  border: 1px solid $btn-secondary-border
+  +background-image(linear-gradient($btn-secondary, $btn-secondary-hover))
+  &:hover /* While mouse hovers */
+    background: $btn-secondary-hover
+  &:active
+    +background-image(linear-gradient($btn-secondary-hover, $btn-secondary))
+  &:link, &:active, &:hover
+    text-decoration: none !important
+
+.btn.share
+  background: $btn-share
+  color: $btn-share-color !important
+  display: inline-block
+  margin: 15px 1em 15px 1.5em
+  padding: 0.23em 0.3em 0
+  +background-image(linear-gradient($btn-share, $btn-share-hover))
+  &:hover /* While mouse hovers */
+    background: $btn-share-hover
+  &:active
+    +background-image(linear-gradient($btn-share-hover, $btn-share))
+  &:link, &:active, &:hover
+    text-decoration: none !important
+
+// TYPOGRAPHY
+.btn.small
+  font-size: em-calc(14)
+
+.btn.medium
+  font-size: em-calc(18)
+
+.btn.large
+  font-size: em-calc(24)
+
+// POSTS#INDEX
+span.share-count /* @TODO - ASSIGN THIS THE .BTN CLASS */
+  text-transform: uppercase
+  display: inline-block
+  font-size: em-calc(18)
+  color: $btn-secondary-color /* @TODO - MAKE THIS A MIXIN */
+  background-color: $btn-secondary
+  padding: 0.6em 0.8em 0.6em 0.8em
+  position: relative
+  font-weight: 600
+  +border-radius(3px)
+  &:after, &:before
+    right: 100%
+    border: solid transparent
+    content: " "
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+  &:after
+    border-color: rgba(136, 183, 213, 0)
+    border-right-color: #ddd
+    border-width: 5px
+    top: 50%
+    margin-top: -5px
+  &:before
+    border-color: rgba(194, 225, 245, 0)
+    border-width: 6px
+    top: 50%
+    margin-top: -6px
