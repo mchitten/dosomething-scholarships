@@ -3,8 +3,8 @@ module DsAuth
     include Services
   
     # We can ignore this entire controller if we're already authenticated
-    before_filter if: :authenticated? do
-      redirect_to main_app.root_path
+    before_filter except: [:destroy], if: :authenticated? do
+      redirect_to main_app.root_path, notice: "You are already logged in!"
     end
 
     #layout 'ds_auth/application'
@@ -91,7 +91,7 @@ module DsAuth
     # GET /logout
     def destroy
       reset_session
-      redirect_to main_app.root_path
+      redirect_to main_app.root_path, notice: "You've been logged out!"
     end
 
     private

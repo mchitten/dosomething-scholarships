@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/ie.css" type="text/css" />
     <script src="/ie/html5.min.js"></script>
   <![endif]-->
-  <%# stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%# javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -100,6 +100,7 @@
 
 <div role="main" class="wrapper">
   <article class="content-center">
+    <% if notice %><p id="notice"><%= notice %></p><% end %>
     <%= yield %>
   </article>
 </div>

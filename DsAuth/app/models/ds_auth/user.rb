@@ -90,7 +90,7 @@ module DsAuth
 
       # set up session for current user
       session[:user_id] = uid
-      session[:user_role] = roles
+      session[:user_roles] = roles
       return true
     end
 
