@@ -18,7 +18,7 @@
   <%= f.input :mc_beta, as: :string, label: 'MC Beta Bucket', input_html: { placeholder: 'The beta opt-in path that will be sent to friends' } %>
   <%= f.input :redirect, input_html: { value: (@share_a_stat.redirect ? @share_a_stat.redirect : 'http://www.dosomething.org/') }, placeholder: 'http://www.dosomething.org/' %>
   <%= f.input :redirect_message, input_html: { placeholder: 'This will appear at the top of the page that the user lands on.' } %>
-  <%= f.input :color_scheme, as: :select, collection: [['Green', 'green'], ['Red', 'red'], ['Orange', 'orange']], include_blank: 'No color' %>
+  <%= f.input :color_scheme, as: :select, collection: [['Blue (default)', 'blue'], ['Green', 'green'], ['Red', 'red'], ['Orange', 'orange'], ['Yellow', 'yellow'], ['Gray', 'gray'], ['Black', 'black']], default: 'blue' %>
   <%= f.input :image, as: :file %>
   <%= f.input :rules, as: :file %>
   <%= f.input :published, as: :boolean, label: 'Published?' %>

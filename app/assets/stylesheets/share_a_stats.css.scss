@@ -15,6 +15,13 @@
       border-radius: 10px;
       color: #fff;
       padding: 3%;
+
+      &.green { background: #163a26; }
+      &.red { background: #e32f2f; }
+      &.orange { background: #ff9e10; color: #000; }
+      &.yellow { background: #fad141; color: #000; }
+      &.gray { background: #ccc; color: #000; }
+      &.black { background: #000; }
     }
   }
 
