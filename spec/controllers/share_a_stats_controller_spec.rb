@@ -28,12 +28,13 @@ describe ShareAStatsController do
   end
 
   describe 'GET #new' do
-    before { get :new }
     describe 'session validation' do
       it 'forces you to log in if you are not an admin' do
-        expect(response).to redirect_to login_path
+        get :new
+        expect(response).to redirect_to '/login'
       end
       it 'responds successfully if you are an admin' do
+        get :new, {}, { user_id: 1, user_roles: { 1 => 'authenticated user', 2 => 'administrator' } }
         expect(response).to be_success
         expect(response.status).to eq 200
       end
