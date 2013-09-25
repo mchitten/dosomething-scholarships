@@ -1,7 +1,17 @@
 class ShareAStat < ActiveRecord::Base
   has_many :share_a_stat_posts
 
+  validates :title, presence: true
+  validates :message, presence: true
+  validates :tip, presence: true
+  validates :mc_alpha, presence: true, numericality: true
+  validates :mc_beta, presence: true, numericality: true
+  validates :redirect, format: { with: URI::regexp }, unless: lambda { self.redirect.nil? || self.redirect.empty? }
+  validates :redirect_message, presence: true
+  validates :color_scheme, presence: true, inclusion: { in: %w(blue green red orange yellow gray black) }
+
   has_attached_file :image, :styles => { :list => '250x141!' }, :default_url => '/images/:style/default.png'
+  validates_attachment :image, :presence => true, :content_type => { :content_type => ['image/jpeg', 'image/png', 'image/gif', 'image/pjpeg', 'image/x-png'] }
 
   def to_param
     [self.id, self.title].join('-').parameterize
