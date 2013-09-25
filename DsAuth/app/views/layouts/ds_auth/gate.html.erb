@@ -23,11 +23,6 @@
 </head>
 <body class="wrapper">
 
-<%# @TODO - BREAK GATE COMPONENTS INTO PARTIALS %>
-<% if Rails.env.development? %>
-  <%= render 'partials/debug' %>
-  <%= link_to 'debug', '#', { :id => 'debug' } %>
-<% end %>
 
 <%= yield %>
 
