@@ -2,6 +2,7 @@ PATH
   remote: DsAuth
   specs:
     ds_auth (0.0.1)
+      compass-rails (~> 2.0.alpha.0)
       rails (~> 4.0.0)
 
 GEM
