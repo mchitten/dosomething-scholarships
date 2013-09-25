@@ -4,7 +4,7 @@ module DsAuth
   
     # We can ignore this entire controller if we're already authenticated
     before_filter if: :authenticated? do
-      redirect_to root_path
+      redirect_to main_app.root_path
     end
 
     #layout 'ds_auth/application'
@@ -91,7 +91,7 @@ module DsAuth
     # GET /logout
     def destroy
       reset_session
-      redirect_to root_path
+      redirect_to main_app.root_path
     end
 
     private
@@ -113,7 +113,7 @@ module DsAuth
             flash[:message] = "You've logged in successfully!"
           end
   
-          source = session[:source] || root_path
+          source = session[:source] || main_app.root_path
           session[:source] = nil
           redirect_to source
         else
