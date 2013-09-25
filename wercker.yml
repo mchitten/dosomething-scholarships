@@ -18,7 +18,7 @@ build:
         - script:
             name: Clear caches
             code: |
-                mkdir /pipeline/build/tmp/cache/
+                mkdir -p /pipeline/build/tmp/cache/
                 RAILS_ENV=test bundle exec rake tmp:cache:clear
 
         - script:
