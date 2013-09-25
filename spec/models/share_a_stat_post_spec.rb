@@ -37,32 +37,16 @@ describe ShareAStatPost do
 
     describe "my friends' numbers" do
       it 'are required' do
-        subject.friend_1 = nil
-        expect(subject).to_not be_valid
-        subject.friend_2 = nil
-        expect(subject).to_not be_valid
-        subject.friend_3 = nil
-        expect(subject).to_not be_valid
-        subject.friend_4 = nil
-        expect(subject).to_not be_valid
-        subject.friend_5 = nil
-        expect(subject).to_not be_valid
-        subject.friend_6 = nil
-        expect(subject).to_not be_valid
+        (1..6).each do |n|
+          subject.send("friend_#{n}=", nil)
+          expect(subject).to_not be_valid
+        end
       end
       it 'must be real phone numbers' do
-        subject.friend_1 = '@*(#&$)@(#$'
-        expect(subject).to_not be_valid
-        subject.friend_2 = '@*(#&$)@(#$'
-        expect(subject).to_not be_valid
-        subject.friend_3 = '@*(#&$)@(#$'
-        expect(subject).to_not be_valid
-        subject.friend_4 = '@*(#&$)@(#$'
-        expect(subject).to_not be_valid
-        subject.friend_5 = '@*(#&$)@(#$'
-        expect(subject).to_not be_valid
-        subject.friend_6 = '@*(#&$)@(#$'
-        expect(subject).to_not be_valid
+        (1..6).each do |n|
+          subject.send("friend_#{n}=", '@*(#&$)@(#$')
+          expect(subject).to_not be_valid
+        end
       end
     end
   end
