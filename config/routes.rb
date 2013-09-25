@@ -7,6 +7,8 @@ Scholarships::Application.routes.draw do
   resources :share_a_stat_posts, only: [:create]
 
   root to: 'share_a_stats#index'
+
+  mount DsAuth::Engine => '/'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

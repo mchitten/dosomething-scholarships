@@ -1,0 +1,45 @@
+@import "compass/css3"
+@import "variables"
+
+// TYPOGRAPHY
+// ----------
+h1, h2, h3, h4, p, b, a, label
+  font-weight: 400
+  text-align: left
+  color: $off_black
+  line-height: em-calc(28)
+
+b
+  font-weight: 600
+
+p, li
+  color: $off-black
+  line-height: 1.5em
+  font-size: 18px
+  letter-spacing: 0.03em
+
+h1
+  font-size: em-calc(32)
+  font-weight: 500
+
+h2
+  font-size: em-calc(24)
+  font-weight: 500
+
+h3
+  font-size: em-calc(18)
+
+h4
+  font-size: em-calc(16)
+
+strong
+  font-weight: 800
+
+a
+  text-decoration: underline
+  &:link, &:visited, &:active
+    color: $global-anchor-color
+  &:hover
+    text-decoration: underline
+    color: lighten($global-anchor-color, 5)
+
