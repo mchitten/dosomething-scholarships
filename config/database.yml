@@ -18,6 +18,7 @@ staging: &staging
 production:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   pool: 5
   database: dosomething_scholarships
 
