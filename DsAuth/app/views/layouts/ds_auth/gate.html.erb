@@ -6,12 +6,12 @@
   <% end %>
 
   <title>Please log in.</title>
-  <%= stylesheet_link_tag('gate', get_campaign) %>
-  <%= javascript_include_tag('application', get_campaign) %>
-  <%= javascript_include_tag('gate', get_campaign) %>
+  <%= stylesheet_link_tag('ds_auth/gate') %>
+  <%= javascript_include_tag('ds_auth/application') %>
+  <%= javascript_include_tag('gate') %>
 
   <!--[if lt IE 9]>
-    <%= javascript_include_tag 'html5' %>
+    <%= javascript_include_tag 'ds_auth/html5' %>
   <![endif]-->
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />

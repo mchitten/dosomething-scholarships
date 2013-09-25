@@ -3,8 +3,12 @@ module DsAuth
     include Services
   
     # We can ignore this entire controller if we're already authenticated
-    before_filter :confirm_unauthenticated
-    layout 'gate'
+    before_filter if: :authenticated? do
+      redirect_to root_path
+    end
+
+    #layout 'ds_auth/application'
+    layout 'ds_auth/gate'
   
     def new
       @source = session[:source]

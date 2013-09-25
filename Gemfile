@@ -77,3 +77,5 @@ group :development, :test do
 end
 
 gem 'actionpack-page_caching'
+gem 'ds_auth', path: 'DsAuth'
+gem 'compass-rails', "~> 2.0.alpha.0"
