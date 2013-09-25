@@ -28,7 +28,7 @@
       </form>
       </li>
       <li><a class="utility-link" href="#">Help</a></li>
-      <li><a class="utility-link" href="#">Sign In</a></li>
+      <li><%= (authenticated? ? link_to('Log Out', ds_auth.logout_path, class: 'utility-link') : link_to('Sign In', ds_auth.login_path, class: 'utility-link')) %></li>
     </ul>
   </div>
 </nav>
