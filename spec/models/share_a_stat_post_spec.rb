@@ -50,4 +50,26 @@ describe ShareAStatPost do
       end
     end
   end
+
+  describe 'Mobile Commons' do
+    before :each do
+      Services::MobileCommons.stub(:subscribe)
+      @sas = FactoryGirl.create(:share_a_stat)
+      @post = FactoryGirl.build(:share_a_stat_post, share_a_stat_id: @sas.id)
+    end
+
+    after :each do
+      @post.save
+    end
+
+    it 'sends a text to the alpha' do
+      Services::MobileCommons.should_receive(:subscribe).with(@post.my_number, @sas.mc_alpha)
+    end
+
+    it 'sends a text to each beta' do
+      (1..6).each do |n|
+        Services::MobileCommons.should_receive(:subscribe).with(@post.send("friend_#{n}"), @sas.mc_beta)
+      end
+    end
+  end
 end

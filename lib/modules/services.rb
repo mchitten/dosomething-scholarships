@@ -71,7 +71,7 @@ module Services
     base_uri 'dosomething.mcommons.com'
 
     def self.subscribe(mobile, opt_in_path)
-      post('/profiles/join', :body => { 'person[phone]' => mobile, 'opt_in_path[]' => opt_in_path })
+      post('/profiles/join', :body => { 'person[phone]' => mobile, 'opt_in_path[]' => opt_in_path }) unless Rails.env.test?
     end
   end
 
