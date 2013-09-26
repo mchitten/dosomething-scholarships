@@ -5,8 +5,7 @@ module DsAuth::InstanceMethods
 
     # Authenticated user role
     unless my_roles.include?('authenticated user')
-      flash[:error] = "Please log in to see that."
-      redirect_to login_path
+      goto_login("Please log in to see that.")
       return
     end
 
@@ -15,14 +14,21 @@ module DsAuth::InstanceMethods
       roles = config_options[:require].map { |m| m.to_s }
       has_role = !(roles & my_roles).empty? && ((config_options[:type] == :any) ? true : ((roles & my_roles).length == roles.length))
       unless has_role && session[:user_id].to_i > 0
-        session.delete(:user_roles)
-        session.delete(:user_id)
-        flash[:error] = "Sorry, you don't have permission to see this page."
-        redirect_to login_path
+        goto_login("You don't have permission to see this page.")
         return
       end
     end
 
     true
   end
+
+  private
+    def goto_login(message)
+      session.delete(:user_roles)
+      session.delete(:user_id)
+      flash[:error] = message
+
+      redirect_to login_path
+      return
+    end
 end
