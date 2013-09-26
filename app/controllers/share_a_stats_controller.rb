@@ -1,5 +1,6 @@
 class ShareAStatsController < ApplicationController
   before_action :set_share_a_stat, only: [:show, :edit, :update, :destroy]
+  gated_pages [:new, :edit, :create, :update, :delete], require: [:administrator]
 
   # GET /share_a_stats
   # GET /share_a_stats.json
@@ -16,11 +17,7 @@ class ShareAStatsController < ApplicationController
 
   # GET /share_a_stats/new
   def new
-    if admin?
-      @share_a_stat = ShareAStat.new
-    else
-      redirect_to ds_auth.login_path
-    end
+    @share_a_stat = ShareAStat.new
   end
 
   # GET /share_a_stats/1/edit
