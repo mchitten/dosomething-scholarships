@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ShareAStatPostsController do
   describe 'POST #create' do
     before do
-      #Services::MobileCommons.stub(:subscribe).and_return(lambda { p "cat" })
+      Services::MobileCommons.stub(:subscribe)
       @sas = FactoryGirl.create(:share_a_stat)
       @valid_params = FactoryGirl.attributes_for(:share_a_stat_post, share_a_stat_id: @sas)
     end

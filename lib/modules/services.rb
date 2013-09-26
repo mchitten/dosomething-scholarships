@@ -50,7 +50,7 @@ module Services
 
   # MailChimp (email) methods
   module MailChimp
-    @mc = Gibbon.new('cdd0ad8955001739ec42519956312bee-us4')
+    @mc = Gibbon::API.new('cdd0ad8955001739ec42519956312bee-us4')
     def self.subscribe(email, campaign)
       mv = { 'GROUPINGS' => { 0 => { 'id' => 10621, 'groups' => campaign } } }
       r = @mc.list_subscribe({
