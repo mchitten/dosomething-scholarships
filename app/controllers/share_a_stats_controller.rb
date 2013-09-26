@@ -16,7 +16,11 @@ class ShareAStatsController < ApplicationController
 
   # GET /share_a_stats/new
   def new
-    @share_a_stat = ShareAStat.new
+    if admin?
+      @share_a_stat = ShareAStat.new
+    else
+      redirect_to ds_auth.login_path
+    end
   end
 
   # GET /share_a_stats/1/edit
