@@ -2,7 +2,7 @@ module DsAuth
   class SessionsController < ApplicationController
     include Services
 
-    gated_pages [:blank, :abc], require: [:administrator]
+    gated_pages [:blank, :abc]
 
     # We can ignore this entire controller if we're already authenticated
     before_filter except: [:destroy], if: :authenticated? do
