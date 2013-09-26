@@ -79,3 +79,4 @@ end
 gem 'actionpack-page_caching'
 gem 'ds_auth', git: 'https://github.com/DoSomething/dosomething-auth.git'
 gem 'compass-rails', "~> 2.0.alpha.0"
+gem 'rubyzip', '< 1.0.0', require: 'zip/zip'
