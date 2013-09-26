@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:DoSomething/dosomething-auth.git
+  remote: https://github.com/DoSomething/dosomething-auth.git
   revision: 9fc28f4cdbb620f6e2f6e81ff900acc97d96685f
   specs:
     ds_auth (0.0.1)

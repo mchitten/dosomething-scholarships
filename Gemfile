@@ -77,5 +77,5 @@ group :development, :test do
 end
 
 gem 'actionpack-page_caching'
-gem 'ds_auth', git: 'git@github.com:DoSomething/dosomething-auth.git'
+gem 'ds_auth', git: 'https://github.com/DoSomething/dosomething-auth.git'
 gem 'compass-rails', "~> 2.0.alpha.0"
