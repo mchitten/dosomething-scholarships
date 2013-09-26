@@ -1,7 +1,9 @@
 module DsAuth
   class SessionsController < ApplicationController
     include Services
-  
+
+    gated_pages [:blank, :abc]
+
     # We can ignore this entire controller if we're already authenticated
     before_filter except: [:destroy], if: :authenticated? do
       redirect_to main_app.root_path, notice: "You are already logged in!"
@@ -9,7 +11,11 @@ module DsAuth
 
     #layout 'ds_auth/application'
     layout 'ds_auth/gate'
-  
+
+    def blank
+      render text: 'hi', layout: false
+    end
+
     def new
       @source = session[:source]
     end
