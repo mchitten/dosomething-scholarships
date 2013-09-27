@@ -525,7 +525,7 @@ label {
   margin: 0.5em 1em 0.5em;
 }
 
-.share_a_stat {
+.share_a_stat, .new_share_a_stat, .edit_share_a_stat {
   .input {
     clear: both;
     min-height: 50px;
