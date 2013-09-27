@@ -10,5 +10,8 @@
   <% end %>
 </div>
 
-<%= link_to 'New Share a stat', new_share_a_stat_path %>
+<% if authenticated? && (has_role?('administrator') || has_role?('staff')) %>
+  <%= link_to 'New Share a stat', new_share_a_stat_path %>
+<% end %>
+
 <% end %>

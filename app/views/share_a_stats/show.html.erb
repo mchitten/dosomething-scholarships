@@ -10,6 +10,9 @@
   <h1><%= @share_a_stat.title %></h1>
   <%= simple_format @share_a_stat.message %>
   <%= render 'share' %>
+<% end %>
+
+<% if authenticated? && (has_role?('administrator') || has_role?('staff')) %>
   <%= link_to 'Edit', edit_share_a_stat_path(@share_a_stat) %> |
   <%= link_to 'Back', share_a_stats_path %>
 <% end %>
