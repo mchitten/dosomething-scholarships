@@ -9,9 +9,8 @@
     </div>
   <% end %>
 </div>
-
-<% if authenticated? && (has_role?('administrator') || has_role?('staff')) %>
-  <%= link_to 'New Share a stat', new_share_a_stat_path %>
 <% end %>
 
+<% if has_role?('administrator') || has_role?('staff') %>
+  <%= link_to 'New Share a stat', new_share_a_stat_path %>
 <% end %>
