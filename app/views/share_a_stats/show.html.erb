@@ -1,10 +1,4 @@
-<nav class="breadcrumbs">
-  <ul>
-    <li><a href="http://www.dosomething.org">Home</a></li>
-    <li><%= link_to 'Scholarships', root_path %></li>
-    <li><%= link_to @share_a_stat.title, @share_a_stat %></li>
-  </ul>
-</nav>
+<%= breadcrumb %>
 
 <% cache [@share_a_stat.id, @share_a_stat.updated_at.to_i] do %>
   <h1><%= @share_a_stat.title %></h1>

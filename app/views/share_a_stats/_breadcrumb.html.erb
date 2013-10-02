@@ -1,0 +1,9 @@
+<nav class="breadcrumbs">
+  <ul itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to 'http://www.dosomething.org', 'itemprop' => 'url' do %><span itemprop="title">Home</span><% end %></li>
+    <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to root_path, 'itemprop' => 'url' do %><span itemprop="title">Scholarships</span><% end %></li>
+    <% if @share_a_stat %>
+	  <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><%= link_to @share_a_stat, 'itemprop' => 'url' do %><span itemprop="title"><%= @share_a_stat.title %></span><% end %></li>
+	 <% end %>
+  </ul>
+</nav>
