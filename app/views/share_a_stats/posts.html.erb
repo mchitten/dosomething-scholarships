@@ -1,0 +1,37 @@
+<%= breadcrumb %>
+
+<div id="posts">
+<style>.content-center { width: 100%; }</style>
+<table border="1" cellpadding="3" cellspacing="1">
+<thead>
+  <tr>
+  	<td>#</td>
+    <td>SaS #</td>
+    <td>Name</td>
+    <td>Number</td>
+    <td>Friend #1</td>
+    <td>Friend #2</td>
+    <td>Friend #3</td>
+    <td>Friend #4</td>
+    <td>Friend #5</td>
+    <td>Friend #6</td>
+    <td>Submitted</td>
+  </tr>
+</thead>
+<% @posts.each do |post| %>
+<tr>
+  <td><%= post.id %></td>
+  <td><%= link_to post.share_a_stat.id, post.share_a_stat %></td>
+  <td><%= post.my_name %></td>
+  <td><%= post.my_number %></td>
+  <td><%= post.friend_1 %></td>
+  <td><%= post.friend_2 %></td>
+  <td><%= post.friend_3 %></td>
+  <td><%= post.friend_4 %></td>
+  <td><%= post.friend_5 %></td>
+  <td><%= post.friend_6 %></td>
+  <td><%= post.created_at.to_time.strftime("%-m/%d/%Y %l:%M%P") %></td>
+</tr>
+<% end %>
+</table>
+</div>

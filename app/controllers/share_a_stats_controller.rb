@@ -1,6 +1,6 @@
 class ShareAStatsController < ApplicationController
   before_action :set_share_a_stat, only: [:show, :edit, :update, :destroy]
-  gated_pages [:new, :edit, :create, :update, :delete], require: [:administrator]
+  gated_pages [:new, :edit, :create, :update, :delete, :posts], require: [:administrator, :staff], type: :any
 
   # GET /share_a_stats
   # GET /share_a_stats.json
@@ -13,6 +13,12 @@ class ShareAStatsController < ApplicationController
   def show
     @post = ShareAStatPost.new
     expires_in 1.month, public: true, 'max-style' => true
+  end
+
+  def posts
+    @share_a_stat = ShareAStat.find(params[:id])
+    @posts = @share_a_stat.share_a_stat_posts.order('created_at DESC')
+    # render json: @posts
   end
 
   # GET /share_a_stats/new

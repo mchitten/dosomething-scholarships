@@ -3,8 +3,12 @@ Scholarships::Application.routes.draw do
     collection do
       post 'share'
     end
+    member do
+      get 'posts'
+    end
   end
-  resources :share_a_stat_posts, only: [:create]
+  resources :share_a_stat_posts, only: [:create] do
+  end
 
   root to: 'share_a_stats#index'
 
