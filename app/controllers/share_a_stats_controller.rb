@@ -5,7 +5,11 @@ class ShareAStatsController < ApplicationController
   # GET /share_a_stats
   # GET /share_a_stats.json
   def index
-    @share_a_stats = ShareAStat.where(published: true)
+    if has_role?('administrator') || has_role?('staff')
+      @share_a_stats = ShareAStat.all
+    else
+      @share_a_stats = ShareAStat.where(published: true)
+    end
   end
 
   # GET /share_a_stats/1
@@ -18,7 +22,6 @@ class ShareAStatsController < ApplicationController
   def posts
     @share_a_stat = ShareAStat.find(params[:id])
     @posts = @share_a_stat.share_a_stat_posts.order('created_at DESC')
-    # render json: @posts
   end
 
   # GET /share_a_stats/new

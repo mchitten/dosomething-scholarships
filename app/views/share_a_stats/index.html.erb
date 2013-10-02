@@ -3,7 +3,7 @@
 <% cache ['sas-index', (@share_a_stats.last ? @share_a_stats.last.updated_at.to_i : Time.now.to_i)] do %>
 <div class="scholarships-wrapper">
   <% @share_a_stats.each do |share_a_stat| %>
-    <div class="scholarship">
+    <div class="scholarship<%= ' unpublished' if !share_a_stat.published %>">
       <%= link_to share_a_stat do %><%= image_tag share_a_stat.image.url(:list) %><% end %>
       <%= link_to share_a_stat.title, share_a_stat %>
       <p><%= truncate share_a_stat.message, length: 100 %></p>

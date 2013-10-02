@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper DsAuth::Engine.helpers
   include DsAuth::Engine.helpers
+  include ApplicationHelper
 end

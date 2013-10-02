@@ -3,7 +3,11 @@
 <html class="no-js">
 <head>
   <meta charset="utf-8">
-  <title>DoSomething.org</title>
+  <% if @share_a_stat %>
+    <title><%= @share_a_stat.title %> | DoSomething.org</title>
+  <% else %>
+    <title>Scholarships | DoSomething.org</title>
+  <% end %>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
